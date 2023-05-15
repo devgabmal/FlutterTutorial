@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         title: 'Nomeador',
         theme: ThemeData(
           useMaterial3: true,
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
         ),
         home: MyHomePage(),
       ),
@@ -66,6 +66,14 @@ class BigCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(pair.asPascalCase);
+    final theme = Theme.of(context);
+
+    return Card(
+      color: theme.colorScheme.primary,
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Text(pair.asPascalCase),
+      ),
+    );
   }
 }
